@@ -3,12 +3,16 @@ import { ThemeProvider } from 'styled-components'
 
 import GlobalStyles from '../styles/global'
 import theme from '../styles/theme'
+import { DefaultSeo } from '@components/seo/default-seo'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <Component {...pageProps} />
+      <>
+        <DefaultSeo />
+        <GlobalStyles />
+        <Component {...pageProps} />
+      </>
     </ThemeProvider>
   )
 }

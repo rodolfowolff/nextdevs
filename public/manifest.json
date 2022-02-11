@@ -1,0 +1,25 @@
+{
+  "name": "Next Devs Blog - The Next Generation of Developers",
+  "short_name": "NextDevs",
+  "theme_color": "#13131F",
+  "background_color": "#282830",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "icons/manifest-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/manifest-icon-512.png",
+      "sizes": "500x405",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "splash_pages": null
+}
