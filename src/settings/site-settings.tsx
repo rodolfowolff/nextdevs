@@ -1,11 +1,11 @@
 export const siteSettings = {
   name: 'NextDevs',
   description:
-    'Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS.',
+    'NextDevs é um blog sobre desenvolvimento de software, com foco em tecnologias como React, Next.js, Node, GraphQL, Javascript e outras tecnologias.',
   author: {
     name: 'Rodolfo Wolff',
     websiteUrl: 'https://nextdevsblog.vercel.app/',
-    address: '',
+    address: 'Brazil',
   },
   logo: {
     url: '/assets/images/logo.png',
