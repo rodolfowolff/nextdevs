@@ -1,5 +1,7 @@
 import type { NextPage } from 'next'
+
 import Seo from '@components/seo/seo'
+import Navbar from '@components/Navbar'
 
 const Home: NextPage = () => {
   return (
@@ -10,7 +12,10 @@ const Home: NextPage = () => {
         path="/"
       />
 
+      <Navbar />
+
       <h1>Página inicial</h1>
+
     </>
   )
 }
