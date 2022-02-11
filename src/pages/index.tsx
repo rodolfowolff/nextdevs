@@ -1,14 +1,17 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
+import Seo from './components/seo/seo'
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <Head>
-        <title>Página inicial | NextDevs</title>
-      </Head>
+    <>
+      <Seo
+        title="Página inicial | NextDevs"
+        description="NextDevs é um blog sobre desenvolvimento de software, com foco em tecnologias como React, Next.js, Node, GraphQL, Javascript e outras tecnologias."
+        path="/"
+      />
+
       <h1>Página inicial</h1>
-    </div>
+    </>
   )
 }
 
