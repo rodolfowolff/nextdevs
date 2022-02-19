@@ -1,17 +1,17 @@
 export const siteSettings = {
-  name: 'NextDevs',
+  name: 'Xablau',
   description:
-    'NextDevs é um blog sobre desenvolvimento de software, com foco em tecnologias como React, Next.js, Node, GraphQL, Javascript e outras tecnologias.',
+    'Xablau é um blog sobre desenvolvimento de software, com foco em tecnologias como React, Next.js, Node, GraphQL, Javascript e outras tecnologias.',
   author: {
     name: 'Rodolfo Wolff',
-    websiteUrl: 'https://nextdevsblog.vercel.app/',
+    websiteUrl: 'https://xablaublog.vercel.app/',
     address: 'Brazil',
   },
   logo: {
     url: '/assets/images/logo.png',
-    alt: 'NextDevs Logo',
+    alt: 'Xablau Logo',
     href: '/',
     width: 96,
     height: 96,
   },
-};
+}

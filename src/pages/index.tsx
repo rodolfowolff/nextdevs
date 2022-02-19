@@ -1,7 +1,5 @@
 import type { NextPage } from 'next'
-
 import Seo from '@components/seo/seo'
-import Navbar from '@components/Navbar'
 
 const Home: NextPage = () => {
   return (
@@ -11,11 +9,9 @@ const Home: NextPage = () => {
         description="NextDevs é um blog sobre desenvolvimento de software, com foco em tecnologias como React, Next.js, Node, GraphQL, Javascript e outras tecnologias."
         path="/"
       />
-
-      <Navbar />
-
-      <h1>Página inicial</h1>
-
+      <div>
+        <h1>conteudo do blog</h1>
+      </div>
     </>
   )
 }

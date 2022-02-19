@@ -1,20 +1,25 @@
 import type { AppProps } from 'next/app'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'next-themes'
 
-import GlobalStyles from '../styles/global'
-import theme from '../styles/theme'
+import GlobalStyles from '@styles/global'
+import { ThemeProvider as Style } from 'styled-components'
+
 import { DefaultSeo } from '@components/seo/default-seo'
+import Navbar from '@components/Navbar'
+import theme from '../styles/theme'
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider theme={theme}>
-      <>
-        <DefaultSeo />
-        <GlobalStyles />
-        <Component {...pageProps} />
-      </>
-    </ThemeProvider>
+    <>
+      <ThemeProvider defaultTheme="dark">
+        <Style theme={theme}>
+          <GlobalStyles />
+          <DefaultSeo />
+
+          <Navbar />
+          <Component {...pageProps} />
+        </Style>
+      </ThemeProvider>
+    </>
   )
 }
-
-export default MyApp

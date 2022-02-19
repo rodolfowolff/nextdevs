@@ -1,9 +1,9 @@
-import { NextSeo, NextSeoProps } from 'next-seo';
+import { NextSeo, NextSeoProps } from 'next-seo'
 
 interface SEOProps extends NextSeoProps {
-  title?: string;
-  description?: string;
-  path: string;
+  title?: string
+  description?: string
+  path: string
 }
 
 const Seo = ({ title, description, path, ...rest }: SEOProps) => {
@@ -19,7 +19,7 @@ const Seo = ({ title, description, path, ...rest }: SEOProps) => {
       }}
       {...rest}
     />
-  );
-};
+  )
+}
 
-export default Seo;
+export default Seo

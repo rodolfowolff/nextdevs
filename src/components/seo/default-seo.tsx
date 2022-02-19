@@ -1,5 +1,5 @@
-import { DefaultSeo as NextDefaultSeo } from 'next-seo';
-import { siteSettings } from '@settings/site-settings';
+import { DefaultSeo as NextDefaultSeo } from 'next-seo'
+import { siteSettings } from '@settings/site-settings'
 
 export const DefaultSeo = () => {
   return (
@@ -39,5 +39,5 @@ export const DefaultSeo = () => {
         },
       ]}
     />
-  );
-};
+  )
+}
