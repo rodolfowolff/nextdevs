@@ -7,16 +7,55 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  
   ${({ theme }) => css`
-    html {
-      font-size: 62.5%;
+    :root {
+      background: ${theme.color.white};
+      color: ${theme.color.dark};
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: ${theme.color.dark};
+      }
+
+      ul {
+        color: ${theme.color.dark};
+      }
+
+      a {
+        color: ${theme.color.dark};
+      }
+    }
+
+    [data-theme='dark'] {
+      background: ${theme.color.dark};
+      color: ${theme.color.white};
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: ${theme.color.white};
+      }
+
+      ul {
+        color: ${theme.color.white};
+      }
+
+      a {
+        color: ${theme.color.white};
+      }
     }
 
     body {
       font-family: ${theme.font.familyBody};
-      font-size: ${theme.font.sizes.medium};
-      background-color: ${theme.colors.dark};
-      color: ${theme.colors['white-200']};
+      font-size: ${theme.font.size.md};
     }
 
     h1,
@@ -26,7 +65,6 @@ const GlobalStyles = createGlobalStyle`
     h5,
     h6 {
       font-family: ${theme.font.familyHeading};
-      color: ${theme.colors['white']};
     }
 
     a,

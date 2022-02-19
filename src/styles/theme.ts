@@ -1,41 +1,71 @@
 export default {
   grid: {
     container: '130rem',
-    gutter: '3.2rem'
+    gutter: '3.2rem',
   },
-  colors: {
-    primary: '#8257E6',
-    white: '#FEFBFB',
-    'white-200': '#C4C4C4',
-    'gray-200': '#282830',
-    dark: '#13131F'
+  color: {
+    primary: '#20f7ff',
+    secondary: '#0aff0f',
+    white: '#fafafa',
+    black: '#000',
+    gray: '#9e9e9e',
+    yellow: '#ffeb3b',
+    green: '#4caf50',
+    lightGreen: '#8bc34a',
+    red: '#f44336',
+    lightRed: '#ffcdd2',
+    blue: '#2196f3',
+    lightBlue: '#64b5f6',
+    pink: '#e91e63',
+    lightPink: '#f8bbd0',
+    purple: '#9c27b0',
+    lightPurple: '#e1bee7',
+    orange: '#ff9800',
+    lightOrange: '#ffcc80',
+    dark: '#212121',
+    darkGray: '#616161',
+    darkBlue: '#0d47a1',
+    darkRed: '#b71c1c',
+    darkPink: '#880e4f',
+    darkPurple: '#4a148c',
+    darkOrange: '#e65100',
+    darkYellow: '#f57f17',
+    darkGreen: '#1b5e20',
+    darkLightRed: '#ff6f00',
+    darkLightBlue: '#0277bd',
+    darkLightPink: '#b388ff',
+    darkLightPurple: '#7c4dff',
+    darkLightOrange: '#ff8a65',
+    darkLightYellow: '#ffb74d',
+    darkLightGreen: '#aeea00',
   },
   font: {
-    weights: {
+    weight: {
       normal: 400,
-      medium: 500,
-      bold: 600
+      md: 500,
+      bd: 600,
     },
     familyHeading: 'Lexend Deca, sans-serif',
     familyBody: 'Inter, sans-serif',
-    sizes: {
-      xsmall: '1.2rem',
-      small: '1.4rem',
-      medium: '1.6rem',
-      large: '1.8rem',
-      xlarge: '2.4rem',
-      xxlarge: '3.2rem',
-      huge: '4.0rem'
-    }
+    size: {
+      xsm: '1.2rem',
+      sm: '1.4rem',
+      md: '1.6rem',
+      lg: '1.8rem',
+      xlg: '2.4rem',
+      xxlg: '3.2rem',
+      huge: '4.0rem',
+    },
   },
-  spacings: {
-    xsmall: '1.6rem',
-    small: '2.4rem',
-    medium: '3.2rem',
-    large: '4.0rem',
-    xlarge: '4.8rem'
+  spacing: {
+    xsm: '1.6rem',
+    sm: '2.4rem',
+    md: '3.2rem',
+    lg: '4.0rem',
+    xlg: '4.8rem',
   },
   border: {
-    radius: '0.8rem'
-  }
+    radius: '0.8rem',
+  },
+  transitionTime: '0.8s',
 } as const

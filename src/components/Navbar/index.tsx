@@ -1,37 +1,78 @@
-import Link from 'next/link';
+import { useState } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import ThemeSwitch from '@components/ThemeSwitch'
+import { MdVerticalDistribute, MdHorizontalDistribute } from 'react-icons/md'
 
-import { NavbarContainer, NavbarLinks } from './styles';
+import {
+  Hamburger,
+  Nav,
+  NavbarContainer,
+  NavLi,
+  NavLink,
+  NavLogo,
+  NavMenu,
+  NavUl,
+} from './styles'
 
-const Navbar = () => (
-  <NavbarContainer>
+const Navbar = () => {
+  const { pathname } = useRouter()
+  const [isOpen, setIsOpen] = useState(false) as [
+    boolean,
+    (arg0: boolean) => void
+  ]
 
-    <Link href="/">NextDevs</Link>
-
-    <NavbarLinks>
-      <ul>
-        <li>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/">
-            <a>Tecnologias</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/">
-            <a>Noticias</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/">
-            <a>Dicas</a>
-          </Link>
-        </li>
-      </ul>
-    </NavbarLinks>
-  </NavbarContainer>
-)
-
-export default Navbar;
+  return (
+    <NavbarContainer isOpen={isOpen}>
+      <Nav isOpen={isOpen}>
+        <Link href="/" passHref>
+          <NavLogo
+            isOpen={isOpen}
+            href="/"
+            aria-label="Voltar para página inicial"
+          >
+            Next<span>Devs</span>
+          </NavLogo>
+        </Link>
+        <NavMenu isOpen={isOpen}>
+          <NavUl isOpen={isOpen}>
+            <NavLi>
+              <Link href="/" passHref>
+                <NavLink>Home</NavLink>
+              </Link>
+            </NavLi>
+            <NavLi>
+              <Link href="/tecnologias" passHref>
+                <NavLink isCurrent={pathname === '/tecnologias'}>
+                  Tecnologias
+                </NavLink>
+              </Link>
+            </NavLi>
+            <NavLi>
+              <Link href="/noticias" passHref>
+                <NavLink isCurrent={pathname === '/noticias'}>Notícias</NavLink>
+              </Link>
+            </NavLi>
+            <NavLi>
+              <Link href="/dicas" passHref>
+                <NavLink isCurrent={pathname === '/dicas'}>Dicas</NavLink>
+              </Link>
+            </NavLi>
+          </NavUl>
+          <ThemeSwitch />
+        </NavMenu>
+        <Hamburger onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? (
+            <MdHorizontalDistribute size={25} />
+          ) : (
+            <MdVerticalDistribute size={25} />
+          )}
+          {/* <span />
+          <span />
+          <span /> */}
+        </Hamburger>
+      </Nav>
+    </NavbarContainer>
+  )
+}
+export default Navbar
