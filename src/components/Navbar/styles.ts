@@ -4,8 +4,10 @@ type NavMenuType = {
   isOpen: boolean
 }
 
-export const NavbarContainer = styled.div<NavMenuType>`
-  height: 80px;
+export const NavbarContainer = styled.header<NavMenuType>`
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1860px;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -16,27 +18,27 @@ export const NavbarContainer = styled.div<NavMenuType>`
 
 export const Nav = styled.nav<NavMenuType>`
   display: flex;
-  padding: 1rem 2rem;
+  margin: 1rem 0;
   align-items: center;
+  justify-content: space-between;
 
   @media (max-width: 768px) {
     align-items: ${({ isOpen }) => (isOpen ? 'center' : 'flex-start')};
-    padding: 0;
+    margin: 0;
     transition: all ${props => props.theme.transitionTime};
   }
 `
 
 export const NavLogo = styled.a<NavMenuType>`
-  font-size: ${props => props.theme.font.size.md};
-  font-weight: ${props => props.theme.font.weight.normal};
-  width: 20%;
+  font-size: ${props => props.theme.font.size.lg};
+  font-weight: ${props => props.theme.font.weight.bd};
   text-align: center;
-  color: ${props => props.theme.color.primary};
+  color: ${props => props.theme.color.turquoise} !important;
 
   span {
     font-weight: ${props => props.theme.font.weight.bd};
     font-size: ${props => props.theme.font.size.lg};
-    color: ${props => props.theme.color.lightOrange};
+    color: ${props => props.theme.color.secondary};
   }
 
   @media (max-width: 768px) {

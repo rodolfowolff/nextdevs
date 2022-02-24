@@ -31,7 +31,7 @@ const Navbar = () => {
             href="/"
             aria-label="Voltar para página inicial"
           >
-            Next<span>Devs</span>
+            Xa<span>Blau</span>
           </NavLogo>
         </Link>
         <NavMenu isOpen={isOpen}>
@@ -67,9 +67,6 @@ const Navbar = () => {
           ) : (
             <MdVerticalDistribute size={25} />
           )}
-          {/* <span />
-          <span />
-          <span /> */}
         </Hamburger>
       </Nav>
     </NavbarContainer>
