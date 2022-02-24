@@ -5,7 +5,7 @@ export const Section = styled.article`
     margin: ${theme.spacing.sm} 0 ${theme.spacing.xlg};
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: ${theme.spacing.xsm};
+    gap: ${theme.spacing.sm};
 
     div.right-side {
       display: grid;

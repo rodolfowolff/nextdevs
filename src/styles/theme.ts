@@ -1,13 +1,15 @@
 export default {
   color: {
-    primary: '#07DAC0',
-    secondary: '#CE2380',
+    primary: '#FE8D79', //07DAC0
+    secondary: '#FF5276', //CE2380
+    lightBlue: '#A4DBFF',
+    blue: '#36A5F0',
     turquoise: '#00BEC5',
-    white: '#fafafa',
-    black: '#171810',
-    dark: '#141413',
+    white: '#F3F3F3',
+    black: '#1C252E',
+    dark: '#121214',
     gray: '#D6DFE0',
-    darkGray: '#4d4d4d',
+    darkGray: '#4D4D4D',
   },
   font: {
     weight: {
@@ -20,10 +22,10 @@ export default {
     size: {
       xsm: '0.8rem',
       sm: '1rem',
-      md: '1.3rem',
+      md: '1.2rem',
       lg: '1.6rem',
-      xlg: '2rem',
-      xxlg: '3rem',
+      xlg: '2.2rem',
+      xxlg: '2.8rem',
       huge: '3.3rem',
     },
   },
@@ -41,5 +43,13 @@ export default {
   grid: {
     container: '130rem',
     gutter: '3.2rem',
+  },
+  lineargradient: {
+    primary: 'linear-gradient(to bottom right, #FE8D79, #FF5276)',
+    secondary: 'linear-gradient(to bottom right, #A4DBFF, #36A5F0)',
+    text: 'linear-gradient(to top right,#ff5276,#fe8d79)',
+  },
+  boxShadow: {
+    primary: '0px 0px 10px rgba(0, 0, 0, 0.1)',
   },
 } as const

@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
     :root {
       background: ${theme.color.white};
       color: ${theme.color.dark};
-
+      transition: all ${props => props.theme.transitionTime};
       h1,
       h2,
       h3,
@@ -34,7 +34,7 @@ const GlobalStyles = createGlobalStyle`
     [data-theme='dark'] {
       background: ${theme.color.dark};
       color: ${theme.color.white};
-
+      transition: all ${props => props.theme.transitionTime};
       h1,
       h2,
       h3,

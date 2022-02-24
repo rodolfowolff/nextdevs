@@ -33,16 +33,16 @@ const mainModifier = {
 
 export const SectionHeader = styled.article<MainType>`
   ${({ theme, hasBackground, bg }) => css`
-    height: 26rem;
+    height: 17rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
 
     ${hasBackground && mainModifier.addBackground(theme, bg)}
 
     h1 {
       width: 100%;
-      max-width: 45rem;
+      max-width: 32rem;
       font-size: ${theme.font.size.xxlg};
       font-weight: ${theme.font.weight.bd};
     }

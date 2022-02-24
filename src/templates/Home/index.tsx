@@ -1,4 +1,5 @@
 import Header from '@components/Header'
+import { LatestPosts } from '@components/LatestPosts'
 import { MostPopular } from '@components/MostPopular'
 import { SectionMain } from '@components/SectionMain'
 import { Thumb } from '@components/Thumb'
@@ -15,7 +16,7 @@ export type HomePageProps = {
   }
   posts: {
     title: string
-    subtitle: string
+    excerpt: string
     image: string
     slug: string
     tags: string[]
@@ -60,8 +61,9 @@ export const HomePage = ({ page, posts }: HomePageProps) => {
                   <Thumb
                     key={post.slug}
                     tagText={post.tags[0]}
+                    description={post.excerpt}
                     backgroundURL={post.coverImage.url}
-                    size="normal"
+                    size="large"
                     orientation="landscape"
                     slug={post.slug}
                   />
@@ -78,6 +80,7 @@ export const HomePage = ({ page, posts }: HomePageProps) => {
                     <Thumb
                       key={post.slug}
                       tagText={post.tags[0]}
+                      description={post.excerpt}
                       backgroundURL={post.coverImage.url}
                       size="small"
                       orientation="landscape"
@@ -88,7 +91,8 @@ export const HomePage = ({ page, posts }: HomePageProps) => {
           </div>
         </SectionMain>
         <Grid>
-          <MostPopular posts={Object.values(posts)} />
+          <MostPopular posts={Object.values(posts.slice(0, 4))} />
+          <LatestPosts posts={Object.values(posts.slice(0, 4))} />
         </Grid>
       </Base>
     </>

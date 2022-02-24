@@ -5,5 +5,9 @@ export const Container = styled.section`
     width: 90%;
     margin: 0 auto;
     max-width: 1860px;
+
+    @media (max-width: 768px) {
+      max-width: 768px;
+    }
   `}
 `

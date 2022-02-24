@@ -13,17 +13,17 @@ const HALF_GAP_ROWS = '10px'
 
 const wrapperModifier = {
   normalAndLandscape: () => css`
-    height: 500px;
+    height: 400px;
   `,
   normalAndPortrait: () => css`
-    height: 500px;
+    height: 270px;
   `,
   smallAndLandscape: () => css`
-    height: calc((500px / ${NUMBER_OF_ROWS}) - ${HALF_GAP_ROWS});
+    height: calc((400px / ${NUMBER_OF_ROWS}) - ${HALF_GAP_ROWS});
   `,
   smallAndPortrait: () => css`
-    width: 320px;
-    height: 240px;
+    width: 280px;
+    height: 170px;
 
     @media (max-width: 768px) {
       width: 100%;
@@ -35,9 +35,11 @@ export const Wrapper = styled.a<WrapperType>`
   ${({ bg, size, orientation }) => css`
     width: 100%;
     position: relative;
-    background-image: url(${bg});
+    background-image: linear-gradient(to bottom, transparent 50%, #13131f),
+      url(${bg});
     background-size: cover;
     background-position: center center;
+    z-index: 1;
 
     ${size === 'normal' &&
     orientation === 'landscape' &&
@@ -53,9 +55,7 @@ export const Wrapper = styled.a<WrapperType>`
 
     ${size === 'small' &&
     orientation === 'portrait' &&
-    wrapperModifier.smallAndPortrait()}
-
-    &::after {
+    wrapperModifier.smallAndPortrait()} /* &::after {
       content: '';
       position: absolute;
       top: 0;
@@ -64,7 +64,7 @@ export const Wrapper = styled.a<WrapperType>`
       right: 0;
       background: linear-gradient(360deg, #13131f 0%, rgba(19, 19, 31, 0) 100%);
       z-index: 1;
-    }
+    } */
   `}
 `
 
@@ -73,6 +73,10 @@ type TagType = {
 }
 
 const tagModifier = {
+  large: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.size.xsm};
+    padding: 6px 16px;
+  `,
   normal: (theme: DefaultTheme) => css`
     font-size: ${theme.font.size.xsm};
     padding: 4px 12px;
@@ -89,7 +93,7 @@ export const Tag = styled.div<TagType>`
     left: 15px;
     position: absolute;
     text-align: center;
-    background-color: ${theme.color.black};
+    background-image: ${theme.lineargradient.primary};
     color: ${theme.color.white};
     text-transform: uppercase;
     border-radius: ${theme.border.radius};
@@ -102,18 +106,21 @@ type PreviewType = {
 }
 
 const previewModifier = {
+  large: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.size.lg};
+  `,
   normal: (theme: DefaultTheme) => css`
-    font-size: ${theme.font.size.xlg};
+    font-size: ${theme.font.size.md};
   `,
   small: (theme: DefaultTheme) => css`
-    font-size: ${theme.font.size.md};
+    font-size: ${theme.font.size.sm};
   `,
 }
 
 export const Preview = styled.p<PreviewType>`
   ${({ theme, size }) => css`
     position: absolute;
-    bottom: ${theme.spacing.sm};
+    bottom: ${theme.spacing.xsm};
     left: ${theme.spacing.sm};
     z-index: 2;
     color: ${theme.color.white};

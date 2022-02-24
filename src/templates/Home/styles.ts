@@ -7,7 +7,7 @@ export const Grid = styled.div`
   ${({ theme }) => css`
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: ${theme.spacing.xsm};
+    gap: ${theme.spacing.sm};
 
     height: calc(
       (${HEIGHT_PREVIEW} + ${theme.spacing.xsm}) * ${NUMBER_OF_ROWS}
