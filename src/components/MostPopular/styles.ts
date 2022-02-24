@@ -4,7 +4,7 @@ export const Wrapper = styled.section`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
-    gap: ${theme.spacing.xsm};
+    gap: ${theme.spacing.sm};
 
     &::-webkit-scrollbar {
       width: 0.8rem;
