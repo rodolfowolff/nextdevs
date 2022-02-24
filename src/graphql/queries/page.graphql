@@ -1,0 +1,18 @@
+query Page($slug: String!) {
+  page (
+    where: {
+      slug: $slug
+    }
+  ) {
+    title
+    subtitle
+    slug
+    content {
+      text
+    }
+    seo {
+      title
+      description
+    }
+  }
+}
