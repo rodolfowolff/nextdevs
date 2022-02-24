@@ -8,7 +8,7 @@ export const DefaultSeo = () => {
       titleTemplate={`${siteSettings.name} | %s`}
       defaultTitle={siteSettings.name}
       description={siteSettings.description}
-      canonical="https://nextdevsblog.vercel.app/"
+      canonical="https://Xablaublog.vercel.app/"
       openGraph={{
         type: 'website',
         locale: 'pt_BR',

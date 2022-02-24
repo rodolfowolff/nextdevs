@@ -15,7 +15,7 @@ const Seo = ({ title, description, path, ...rest }: SEOProps) => {
         url: `${process.env.NEXT_PUBLIC_SITE_URL}/${path}`,
         title,
         description,
-        site_name: 'NextDevs',
+        site_name: 'Xablau',
       }}
       {...rest}
     />
