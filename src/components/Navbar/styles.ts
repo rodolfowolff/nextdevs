@@ -11,8 +11,9 @@ export const NavbarContainer = styled.header<NavMenuType>`
 
   @media (max-width: 768px) {
     width: 100%;
+    max-width: 768px;
     position: relative;
-    height: ${({ isOpen }) => (isOpen ? '100vh' : '40px')};
+    height: ${({ isOpen }) => (isOpen ? '100vh' : '115px')};
   }
 `
 
@@ -25,26 +26,31 @@ export const Nav = styled.nav<NavMenuType>`
   @media (max-width: 768px) {
     align-items: ${({ isOpen }) => (isOpen ? 'center' : 'flex-start')};
     margin: 0;
-    transition: all ${props => props.theme.transitionTime};
   }
 `
 
 export const NavLogo = styled.a<NavMenuType>`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   font-size: ${props => props.theme.font.size.lg};
-  font-weight: ${props => props.theme.font.weight.bd};
+  font-weight: ${props => props.theme.font.weight.normal};
   text-align: center;
-  color: ${props => props.theme.color.turquoise} !important;
+  background: ${props => props.theme.lineargradient.text};
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
   span {
     font-weight: ${props => props.theme.font.weight.bd};
-    font-size: ${props => props.theme.font.size.lg};
-    color: ${props => props.theme.color.secondary};
+    font-size: ${props => props.theme.font.size.xxlg};
+    font-family: ${props => props.theme.font.familyHeading};
   }
 
   @media (max-width: 768px) {
     font-size: 1.1rem;
-    margin: 5px 10px 0;
-    width: ${({ isOpen }) => (isOpen ? '50%' : '30%')};
+    margin: 8px 10px 0;
+    width: ${({ isOpen }) => (isOpen ? '50%' : '40%')};
     transition: all ${props => props.theme.transitionTime};
   }
 `
@@ -63,7 +69,7 @@ export const NavMenu = styled.div<NavMenuType>`
     align-items: stretch;
     width: ${({ isOpen }) => (isOpen ? '50%' : '80%')};
     opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
-    background-color: ${({ isOpen }) => (isOpen ? '#34c494' : 'none')};
+    background-color: ${({ isOpen }) => (isOpen ? '#36A5F0' : 'none')};
   }
 `
 
@@ -87,17 +93,18 @@ export const NavLi = styled.ul`
 
 export const NavLink = styled.a`
   cursor: pointer;
-  font-size: 0.95rem;
+  font-size: ${props => props.theme.font.size.sm};
   font-weight: 400;
   padding: 1rem 2rem;
   text-align: center;
   text-decoration: none;
   border: 1px solid transparent;
+  transition: color ${props => props.theme.transitionTime};
 
   &:hover {
     color: ${props => props.theme.color.secondary};
     border-bottom: 1px solid ${props => props.theme.color.secondary};
-    transition: all ${props => props.theme.transitionTime};
+    transition: color ${props => props.theme.transitionTime};
   }
 `
 

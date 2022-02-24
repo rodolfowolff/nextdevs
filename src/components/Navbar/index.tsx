@@ -31,7 +31,7 @@ const Navbar = () => {
             href="/"
             aria-label="Voltar para página inicial"
           >
-            Xa<span>Blau</span>
+            XA<span>BLAU</span>
           </NavLogo>
         </Link>
         <NavMenu isOpen={isOpen}>
