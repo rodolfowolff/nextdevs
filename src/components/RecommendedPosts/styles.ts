@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components'
 
-import { Preview } from '../Thumb/styles'
+import * as ThumbStyles from '../Thumb/styles'
 
 export const Wrapper = styled.section`
   ${({ theme }) => css`
-    overflow: hidden;
+    margin: ${theme.spacing.xlg} 0;
 
     > div {
       display: grid;
@@ -12,7 +12,7 @@ export const Wrapper = styled.section`
       gap: ${theme.spacing.xsm};
     }
 
-    ${Preview} {
+    ${ThumbStyles.Preview} {
       font-size: ${theme.font.size.md};
     }
 
@@ -25,7 +25,7 @@ export const Wrapper = styled.section`
 
     @media (min-width: 1360px) {
       > div {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: ${theme.spacing.sm};
       }
     }

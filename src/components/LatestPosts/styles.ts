@@ -1,33 +1,24 @@
 import styled, { css } from 'styled-components'
 
-import { Preview } from '../Thumb/styles'
-
 export const Wrapper = styled.section`
   ${({ theme }) => css`
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: ${theme.spacing.sm};
 
-    > div {
-      display: grid;
-      grid-template-rows: repeat(1, 1fr);
-      gap: ${theme.spacing.xsm};
+    &::-webkit-scrollbar {
+      width: 0.8rem;
     }
 
-    ${Preview} {
-      font-size: ${theme.font.size.md};
+    ::-webkit-scrollbar-track {
+      background: ${theme.lineargradient.text};
     }
 
-    @media (min-width: 860px) {
-      > div {
-        grid-template-columns: repeat(2, 1fr);
-        gap: ${theme.spacing.sm};
-      }
+    ::-webkit-scrollbar-thumb {
+      background: ${theme.lineargradient.text};
     }
 
-    @media (min-width: 1360px) {
-      > div {
-        grid-template-columns: repeat(1, 1fr);
-        gap: ${theme.spacing.sm};
-      }
-    }
+    @media (max-width: 768px) {
+      gap: ${theme.spacing.md};
   `}
 `

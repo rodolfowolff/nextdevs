@@ -1,6 +1,7 @@
 import Header from '@components/Header'
 import { LatestPosts } from '@components/LatestPosts'
 import { MostPopular } from '@components/MostPopular'
+import { RecommendedPosts } from '@components/RecommendedPosts'
 import { SectionMain } from '@components/SectionMain'
 import { Thumb } from '@components/Thumb'
 import { HomePageProps } from 'src/types/post-type'
@@ -72,9 +73,11 @@ export const HomePage = ({ page, posts }: HomePageProps) => {
           </div>
         </SectionMain>
         <Grid>
-          <MostPopular posts={Object.values(posts.slice(0, 8))} />
-          <LatestPosts posts={Object.values(posts.slice(0, 4))} />
+          <LatestPosts posts={Object.values(posts.slice(0, 6))} />
+          <MostPopular posts={Object.values(posts.slice(0, 4))} />
         </Grid>
+
+        <RecommendedPosts posts={Object.values(posts.slice(0, 3))} />
       </Base>
     </>
   )
