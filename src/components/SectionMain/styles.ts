@@ -12,5 +12,13 @@ export const Section = styled.article`
       grid-template-rows: 1fr 1fr;
       gap: 15px;
     }
+
+    @media (max-width: 430px) {
+      margin: ${theme.spacing.xsm} 0 ${theme.spacing.sm};
+      gap: ${theme.spacing.xsm};
+
+      div.right-side {
+      gap: 5px;
+    }
   `}
 `

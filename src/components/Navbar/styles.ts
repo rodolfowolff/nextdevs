@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css, DefaultTheme } from 'styled-components'
 
 type NavMenuType = {
   isOpen: boolean
@@ -9,9 +9,9 @@ export const NavbarContainer = styled.header<NavMenuType>`
   margin: 0 auto;
   max-width: 1860px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 860px) {
     width: 100%;
-    max-width: 768px;
+    max-width: 860px;
     position: relative;
     height: ${({ isOpen }) => (isOpen ? '100vh' : '115px')};
   }
@@ -23,7 +23,7 @@ export const Nav = styled.nav<NavMenuType>`
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: 768px) {
+  @media (max-width: 860px) {
     align-items: ${({ isOpen }) => (isOpen ? 'center' : 'flex-start')};
     margin: 0;
   }
@@ -43,11 +43,11 @@ export const NavLogo = styled.a<NavMenuType>`
 
   span {
     font-weight: ${props => props.theme.font.weight.bd};
-    font-size: ${props => props.theme.font.size.xxlg};
+    font-size: ${props => props.theme.font.size.huge};
     font-family: ${props => props.theme.font.familyHeading};
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 860px) {
     font-size: 1.1rem;
     margin: 8px 10px 0;
     width: ${({ isOpen }) => (isOpen ? '50%' : '40%')};
@@ -61,7 +61,7 @@ export const NavMenu = styled.div<NavMenuType>`
   justify-content: space-between;
   transition: all ${props => props.theme.transitionTime};
 
-  @media (max-width: 768px) {
+  @media (max-width: 860px) {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -78,7 +78,7 @@ export const NavUl = styled.ul<NavMenuType>`
   width: 100%;
   justify-content: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 860px) {
     padding: 1rem;
     flex-direction: column;
     align-items: center;
@@ -95,21 +95,39 @@ type NavLinkType = {
   isCurrent: boolean
 }
 
-export const NavLink = styled.a<NavLinkType>`
-  cursor: pointer;
-  font-size: ${props => props.theme.font.size.sm};
-  font-weight: 400;
-  padding: 1rem 2rem;
-  text-align: center;
-  text-decoration: none;
-  border: 1px solid transparent;
-  transition: color ${props => props.theme.transitionTime};
-
-  &:hover {
-    color: ${props => props.theme.color.secondary};
-    border-bottom: 1px solid ${props => props.theme.color.secondary};
-    transition: color ${props => props.theme.transitionTime};
+const bottomLine = (theme: DefaultTheme) => css`
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: ${props => props.theme.lineargradient.secondary};
+    margin-top: 8px;
+    bottom: 0;
+    left: 0;
   }
+`
+
+export const NavLink = styled.a<NavLinkType>`
+  ${({ theme, isCurrent }) => css`
+    cursor: pointer;
+    font-size: ${props => props.theme.font.size.md};
+    font-weight: 400;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: color ${props => props.theme.transitionTime};
+    position: relative;
+
+    ${isCurrent && bottomLine(theme)};
+
+    &:hover,
+    &:active,
+    &:focus {
+      ${bottomLine(theme)}
+    }
+  `}
 `
 
 export const Hamburger = styled.div`
@@ -123,7 +141,7 @@ export const Hamburger = styled.div`
     background-color: ${props => props.theme.color.primary};
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 860px) {
     display: flex;
     position: absolute;
     top: 15px;

@@ -55,16 +55,7 @@ export const Wrapper = styled.a<WrapperType>`
 
     ${size === 'small' &&
     orientation === 'portrait' &&
-    wrapperModifier.smallAndPortrait()} /* &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(360deg, #13131f 0%, rgba(19, 19, 31, 0) 100%);
-      z-index: 1;
-    } */
+    wrapperModifier.smallAndPortrait()}
   `}
 `
 
@@ -120,10 +111,14 @@ const previewModifier = {
 export const Preview = styled.p<PreviewType>`
   ${({ theme, size }) => css`
     position: absolute;
-    bottom: ${theme.spacing.xsm};
+    bottom: ${theme.spacing.sm};
     left: ${theme.spacing.sm};
     z-index: 2;
     color: ${theme.color.white};
     ${previewModifier[size](theme)};
+
+    @media (max-width: 430px) {
+      left: 0.4rem;
+      font-size: ${theme.font.size.xsm};
   `}
 `

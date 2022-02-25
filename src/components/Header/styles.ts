@@ -55,11 +55,25 @@ export const SectionHeader = styled.article<MainType>`
       margin-top: ${theme.spacing.md};
     }
 
-    @media (max-width: 768px) {
-      height: 22rem;
+    @media (max-width: 860px) {
+      height: 14rem;
 
       h1 {
         font-size: ${theme.font.size.xlg};
+        font-weight: ${theme.font.weight.bd};
+      }
+
+      h2 {
+        font-size: ${theme.font.size.md};
+        font-weight: ${theme.font.weight.md};
+      }
+    }
+
+    @media (max-width: 480px) {
+      height: 8rem;
+
+      h1 {
+        font-size: ${theme.font.size.md};
         font-weight: ${theme.font.weight.bd};
       }
 
@@ -68,10 +82,6 @@ export const SectionHeader = styled.article<MainType>`
         font-weight: ${theme.font.weight.md};
       }
     }
-
-    @media (max-width: 480px) {
-      height: 16rem;
-    }
   `}
 `
 
@@ -79,7 +89,7 @@ export const SectionArticle = styled.div`
   ${({ theme }) => css`
     margin: ${theme.spacing.md} 0;
 
-    @media (max-width: 768px) {
+    @media (max-width: 860px) {
       margin: ${theme.spacing.sm} 0;
     }
   `}

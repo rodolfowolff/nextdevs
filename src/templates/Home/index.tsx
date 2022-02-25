@@ -72,7 +72,7 @@ export const HomePage = ({ page, posts }: HomePageProps) => {
           </div>
         </SectionMain>
         <Grid>
-          <MostPopular posts={Object.values(posts.slice(0, 4))} />
+          <MostPopular posts={Object.values(posts.slice(0, 8))} />
           <LatestPosts posts={Object.values(posts.slice(0, 4))} />
         </Grid>
       </Base>
