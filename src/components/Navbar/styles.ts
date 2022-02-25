@@ -5,7 +5,7 @@ type NavMenuType = {
 }
 
 export const NavbarContainer = styled.header<NavMenuType>`
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   max-width: 1860px;
 
@@ -88,7 +88,11 @@ export const NavUl = styled.ul<NavMenuType>`
 `
 
 export const NavLi = styled.ul`
-  padding: 8px;
+  margin: 8px 0;
+
+  @media (min-width: 460px) {
+    margin: 17px 0;
+  }
 `
 
 type NavLinkType = {

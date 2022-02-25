@@ -46,7 +46,7 @@ export default {
   },
   lineargradient: {
     primary: 'linear-gradient(to bottom right, #FE8D79, #FF5276)',
-    secondary: 'linear-gradient(to bottom right, #A4DBFF, #36A5F0)',
+    secondary: 'linear-gradient(to bottom right, #7EBDC2, #36A5F0)',
     text: 'linear-gradient(to top right,#ff5276,#fe8d79)',
   },
   boxShadow: {

@@ -10,11 +10,15 @@ export const Title = styled.h3`
     &::after {
       content: '';
       position: absolute;
-      width: 25rem;
+      width: 350px;
       height: 0.3rem;
       background: ${theme.lineargradient.secondary};
       left: 0;
       bottom: -1.2rem;
+
+      @media (max-width: 460px) {
+        width: 80%;
+      }
     }
   `}
 `

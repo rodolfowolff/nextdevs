@@ -28,8 +28,10 @@ export const PostPreview = ({
       <h2>{title}</h2>
       <p>{excerpt}</p>
       <time>
-        <p>publicado em: </p>{' '}
-        {new Date(publishedAt).toLocaleDateString('pt-BR')}
+        <span>
+          publicado em: <br />
+          {new Date(publishedAt).toLocaleDateString('pt-BR')}
+        </span>
       </time>
       <WrapperButton>
         <CustomLink size="small" url={slug} id={`info-${slug}`}>

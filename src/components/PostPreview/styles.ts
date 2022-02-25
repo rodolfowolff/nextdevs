@@ -4,10 +4,11 @@ export const Wrapper = styled.div`
   ${({ theme }) => css`
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: ${theme.spacing.xsm};
+    gap: ${theme.spacing.sm};
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
+      gap: ${theme.spacing.md};
   `}
 `
 
@@ -16,20 +17,40 @@ export const Info = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 460px;
+    width: 100%;
 
     h3 {
       font-size: ${theme.font.size.sm};
       font-weight: ${theme.font.weight.md};
     }
 
-    p,
+    p {
+      font-size: ${theme.font.size.md};
+    }
+
     span {
-      font-size: ${theme.font.size.xsm};
+      font-size: ${theme.font.size.sm};
     }
 
     @media (min-width: 768px) {
       width: 100%;
+    }
+
+    @media (min-width: 460px) {
+      h3 {
+        font-size: ${theme.font.size.xsm};
+        font-weight: ${theme.font.weight.md};
+      }
+
+      p {
+        font-size: ${theme.font.size.sm};
+        margin: ${theme.spacing.sm} 0;
+      }
+
+      span {
+        font-size: ${theme.font.size.xsm};
+        padding: ${theme.spacing.lg} 0;
+      }
     }
   `}
 `

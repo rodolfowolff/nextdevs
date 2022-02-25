@@ -65,11 +65,11 @@ type TagType = {
 
 const tagModifier = {
   large: (theme: DefaultTheme) => css`
-    font-size: ${theme.font.size.xsm};
-    padding: 6px 16px;
+    font-size: ${theme.font.size.sm};
+    padding: 8px 16px;
   `,
   normal: (theme: DefaultTheme) => css`
-    font-size: ${theme.font.size.xsm};
+    font-size: ${theme.font.size.sm};
     padding: 4px 12px;
   `,
   small: (theme: DefaultTheme) => css`
@@ -80,14 +80,12 @@ const tagModifier = {
 
 export const Tag = styled.div<TagType>`
   ${({ theme, size }) => css`
-    top: 10px;
-    left: 15px;
     position: absolute;
     text-align: center;
     background-image: ${theme.lineargradient.primary};
     color: ${theme.color.white};
+    font-weight: ${theme.font.weight.bd};
     text-transform: uppercase;
-    border-radius: ${theme.border.radius};
     ${tagModifier[size](theme)};
   `}
 `
