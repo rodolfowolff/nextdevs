@@ -1,11 +1,11 @@
-import { HomePageProps } from '../../templates/Home'
+import { PostsProps } from 'src/types/post-type'
 import { Heading } from '../Heading'
 import { Thumb } from '../Thumb'
 
 import { Wrapper } from './styles'
 
 type LatestPostsProps = {
-  posts: HomePageProps[]
+  posts: PostsProps[]
 }
 
 export const LatestPosts = ({ posts }: LatestPostsProps) => (
@@ -26,10 +26,3 @@ export const LatestPosts = ({ posts }: LatestPostsProps) => (
     </div>
   </Wrapper>
 )
-
-// coverImage: {url: 'https://media.graphcms.com/resize=height:400,width:400/UcUf3B79QKjSSdURICWL', __typename: 'Asset'}
-// excerpt: "Learn more about Polymorphic Relations and Sortable Relations with GraphCMS"
-// publishedAt: "2022-02-24T00:53:03.321847+00:00"
-// slug: "union-types-and-sortable-relations"
-// tags: ['news']
-// title: "Partiu?"

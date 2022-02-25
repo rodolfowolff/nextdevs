@@ -3,28 +3,9 @@ import { LatestPosts } from '@components/LatestPosts'
 import { MostPopular } from '@components/MostPopular'
 import { SectionMain } from '@components/SectionMain'
 import { Thumb } from '@components/Thumb'
+import { HomePageProps } from 'src/types/post-type'
 import { Base } from '../Base'
 import { Grid } from './styles'
-
-export type HomePageProps = {
-  page: {
-    content: {
-      text: string
-    }
-    subtitle: string
-    backgroundURL: string
-  }
-  posts: {
-    title: string
-    excerpt: string
-    image: string
-    slug: string
-    tags: string[]
-    coverImage: {
-      url: string
-    }
-  }[]
-}
 
 const SECTIONS_CONFIGS = [
   {

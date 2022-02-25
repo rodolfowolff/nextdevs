@@ -14,7 +14,7 @@ export default function Home() {
     {
       data: { posts },
     },
-  ] = usePostsQuery()
+  ] = usePostsQuery() as [{ data: { posts: any } }, any]
   const [
     {
       data: { page },
@@ -23,7 +23,7 @@ export default function Home() {
     variables: {
       slug: 'home',
     },
-  })
+  }) as [{ data: { page: any } }, any]
 
   return (
     <>
@@ -34,7 +34,19 @@ export default function Home() {
             description={`${page?.subtitle}`}
             path="/"
           />
-          <HomePage page={page} posts={posts} />
+          <HomePage
+            page={page}
+            posts={posts}
+            title={''}
+            excerpt={''}
+            image={''}
+            slug={''}
+            tags={[]}
+            coverImage={{
+              url: '',
+            }}
+            publishedAt={''}
+          />
         </>
       )}
     </>

@@ -17,10 +17,7 @@ import {
 
 const Navbar = () => {
   const { pathname } = useRouter()
-  const [isOpen, setIsOpen] = useState(false) as [
-    boolean,
-    (arg0: boolean) => void
-  ]
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <NavbarContainer isOpen={isOpen}>
@@ -38,7 +35,7 @@ const Navbar = () => {
           <NavUl isOpen={isOpen}>
             <NavLi>
               <Link href="/" passHref>
-                <NavLink>Home</NavLink>
+                <NavLink isCurrent={pathname === '/'}>Home</NavLink>
               </Link>
             </NavLi>
             <NavLi>

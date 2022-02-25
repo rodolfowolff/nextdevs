@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import { Wrapper, Tag, Preview } from './styles'
 
-export type ThumbSizes = 'normal' | 'small'
+export type ThumbSizes = 'large' | 'normal' | 'small'
 export type ThumbOrientations = 'landscape' | 'portrait'
 
 type ThumbType = {

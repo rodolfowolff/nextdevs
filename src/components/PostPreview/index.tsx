@@ -1,13 +1,16 @@
 import Link from 'next/link'
+import { PostsProps } from 'src/types/post-type'
 
-// import { PostProps } from '../../templates/Home'
 // import { CustomLink } from '../CustomLink'
 // import { SROnly } from '../SROnly'
 import { Thumb } from '../Thumb'
 
 import { Wrapper, Info, WrapperButton } from './styles'
 
-// type PostPreviewProps = PostProps
+// type PostPreviewProps = HomePageProps & {
+//   tags?: string[]
+//   orientation?: 'portrait' | 'landscape'
+// }
 
 export const PostPreview = ({
   tags,
@@ -16,7 +19,7 @@ export const PostPreview = ({
   title,
   excerpt,
   publishedAt,
-}) => (
+}: PostsProps) => (
   <Wrapper>
     <Thumb
       tagText={tags[0]}

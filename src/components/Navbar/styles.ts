@@ -91,7 +91,11 @@ export const NavLi = styled.ul`
   padding: 8px;
 `
 
-export const NavLink = styled.a`
+type NavLinkType = {
+  isCurrent: boolean
+}
+
+export const NavLink = styled.a<NavLinkType>`
   cursor: pointer;
   font-size: ${props => props.theme.font.size.sm};
   font-weight: 400;
