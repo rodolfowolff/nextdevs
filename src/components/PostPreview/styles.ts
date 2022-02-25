@@ -27,13 +27,21 @@ export const Info = styled.div`
     span {
       font-size: ${theme.font.size.xsm};
     }
-  `}
 
-  @media (max-width: 768px) {
-    width: 100%;
-  }
+    @media (min-width: 768px) {
+      width: 100%;
+    }
+  `}
 `
 
 export const WrapperButton = styled.div`
   width: 10rem;
+`
+
+export const Text = styled.span`
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  left: -1px;
 `

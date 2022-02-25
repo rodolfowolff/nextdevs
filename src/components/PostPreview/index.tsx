@@ -1,3 +1,4 @@
+import { CustomLink } from '@components/CustomLink'
 import Link from 'next/link'
 import { PostsProps } from 'src/types/post-type'
 
@@ -5,12 +6,7 @@ import { PostsProps } from 'src/types/post-type'
 // import { SROnly } from '../SROnly'
 import { Thumb } from '../Thumb'
 
-import { Wrapper, Info, WrapperButton } from './styles'
-
-// type PostPreviewProps = HomePageProps & {
-//   tags?: string[]
-//   orientation?: 'portrait' | 'landscape'
-// }
+import { Wrapper, Info, WrapperButton, Text } from './styles'
 
 export const PostPreview = ({
   tags,
@@ -29,16 +25,16 @@ export const PostPreview = ({
       slug={slug}
     />
     <Info aria-labelledby={`info-${slug}`}>
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       <p>{excerpt}</p>
       <time>
         <p>publicado em: </p>{' '}
         {new Date(publishedAt).toLocaleDateString('pt-BR')}
       </time>
       <WrapperButton>
-        {/* <CustomLink size="small" url={slug} id={`info-${slug}`}>
-          Ler notícia <SROnly> {title}</SROnly>
-        </CustomLink> */}
+        <CustomLink size="small" url={slug} id={`info-${slug}`}>
+          Ler notícia <Text> {title}</Text>
+        </CustomLink>
       </WrapperButton>
     </Info>
   </Wrapper>

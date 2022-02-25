@@ -12,7 +12,7 @@ export const Title = styled.h3`
       position: absolute;
       width: 25rem;
       height: 0.3rem;
-      background-color: ${theme.color.primary};
+      background: ${theme.lineargradient.secondary};
       left: 0;
       bottom: -1.2rem;
     }

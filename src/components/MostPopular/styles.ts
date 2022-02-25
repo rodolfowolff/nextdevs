@@ -11,11 +11,11 @@ export const Wrapper = styled.section`
     }
 
     ::-webkit-scrollbar-track {
-      background: ${theme.color.darkGray};
+      background: ${theme.lineargradient.text};
     }
 
     ::-webkit-scrollbar-thumb {
-      background: ${theme.color.primary};
+      background: ${theme.lineargradient.text};
     }
 
     @media (max-width: 768px) {
