@@ -7,7 +7,7 @@ type NavMenuType = {
 export const NavbarContainer = styled.header<NavMenuType>`
   width: 80%;
   margin: 0 auto;
-  max-width: 1860px;
+  max-width: 1440px;
 
   @media (max-width: 860px) {
     width: 100%;
