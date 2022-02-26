@@ -40,6 +40,7 @@ export const Wrapper = styled.a<WrapperType>`
     background-size: cover;
     background-position: center center;
     z-index: 1;
+    border-radius: 15px;
 
     ${size === 'normal' &&
     orientation === 'landscape' &&
@@ -67,14 +68,17 @@ const tagModifier = {
   large: (theme: DefaultTheme) => css`
     font-size: ${theme.font.size.sm};
     padding: 8px 16px;
+    border-radius: 10px 0 5px 0;
   `,
   normal: (theme: DefaultTheme) => css`
     font-size: ${theme.font.size.sm};
     padding: 4px 12px;
+    border-radius: 10px 0 5px 0;
   `,
   small: (theme: DefaultTheme) => css`
     font-size: ${theme.font.size.xsm};
     padding: 2px 8px;
+    border-radius: 10px 0 5px 0;
   `,
 }
 
