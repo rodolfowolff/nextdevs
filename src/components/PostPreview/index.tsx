@@ -23,6 +23,7 @@ export const PostPreview = ({
       size="small"
       orientation="portrait"
       slug={slug}
+      pagePath={`/post/${slug}`}
     />
     <Info aria-labelledby={`info-${slug}`}>
       <h2>{title}</h2>

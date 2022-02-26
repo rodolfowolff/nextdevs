@@ -22,6 +22,7 @@ export const RecommendedPosts = ({ posts }: RecommendedPostsProps) => (
           size="normal"
           orientation="portrait"
           description={post.excerpt}
+          pagePath={`/post/${post.slug}`}
         />
       ))}
     </div>

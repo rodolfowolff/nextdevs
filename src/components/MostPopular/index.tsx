@@ -21,6 +21,7 @@ export const MostPopular = ({ posts }: MostPopularProps) => (
           size="normal"
           orientation="portrait"
           description={post.excerpt}
+          pagePath={`/post/${post.slug}`}
         />
       ))}
     </div>

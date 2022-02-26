@@ -48,6 +48,7 @@ export const HomePage = ({ page, posts }: HomePageProps) => {
                     size="large"
                     orientation="landscape"
                     slug={post.slug}
+                    pagePath={`/post/${post.slug}`}
                   />
                 ))
           )}
@@ -67,6 +68,7 @@ export const HomePage = ({ page, posts }: HomePageProps) => {
                       size="small"
                       orientation="landscape"
                       slug={post.slug}
+                      pagePath={`/post/${post.slug}`}
                     />
                   ))
             )}
