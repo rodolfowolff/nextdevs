@@ -5687,6 +5687,24 @@ export type PageQuery = {
   } | null
 }
 
+export type PostQueryVariables = Exact<{
+  slug: Scalars['String']
+}>
+
+export type PostQuery = {
+  __typename?: 'Query'
+  post?: {
+    __typename?: 'Post'
+    title: string
+    slug: string
+    tags: Array<string>
+    excerpt?: string | null
+    publishedAt?: any | null
+    coverImage?: { __typename?: 'Asset'; url: string } | null
+    content: { __typename?: 'RichText'; html: string }
+  } | null
+}
+
 export type PostsQueryVariables = Exact<{ [key: string]: never }>
 
 export type PostsQuery = {
@@ -5723,6 +5741,29 @@ export function usePageQuery(
   options: Omit<Urql.UseQueryArgs<PageQueryVariables>, 'query'>
 ) {
   return Urql.useQuery<PageQuery>({ query: PageDocument, ...options })
+}
+export const PostDocument = gql`
+  query Post($slug: String!) {
+    post(where: { slug: $slug }) {
+      title
+      slug
+      tags
+      excerpt
+      publishedAt
+      coverImage {
+        url(transformation: { image: { resize: { width: 1400, height: 600 } } })
+      }
+      content {
+        html
+      }
+    }
+  }
+`
+
+export function usePostQuery(
+  options: Omit<Urql.UseQueryArgs<PostQueryVariables>, 'query'>
+) {
+  return Urql.useQuery<PostQuery>({ query: PostDocument, ...options })
 }
 export const PostsDocument = gql`
   query Posts {
