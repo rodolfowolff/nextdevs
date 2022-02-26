@@ -12,6 +12,7 @@ type ThumbType = {
   backgroundURL: string
   size: ThumbSizes
   orientation: ThumbOrientations
+  pagePath: string
 }
 
 export const Thumb = ({
@@ -21,8 +22,9 @@ export const Thumb = ({
   size,
   orientation,
   slug,
+  pagePath,
 }: ThumbType) => (
-  <Link href={slug} passHref>
+  <Link href={pagePath} passHref>
     <Wrapper
       size={size}
       orientation={orientation}
