@@ -1,4 +1,3 @@
-import { NoImage } from '@components/Thumb/styles'
 import { PostsProps } from 'src/types/post-type'
 import { Heading } from '../Heading'
 import { Thumb } from '../Thumb'
