@@ -3,7 +3,7 @@ import styled, { css, DefaultTheme } from 'styled-components'
 import { ThumbSizes, ThumbOrientations } from '.'
 
 type WrapperType = {
-  bg: string
+  bg: string | null
   size: ThumbSizes
   orientation: ThumbOrientations
 }
@@ -36,11 +36,12 @@ export const Wrapper = styled.a<WrapperType>`
     width: 100%;
     position: relative;
     background-image: linear-gradient(to bottom, transparent 50%, #13131f),
-      url(${bg});
+      ${bg ? `url(${bg})` : 'none'};
     background-size: cover;
     background-position: center center;
     z-index: 1;
     border-radius: 15px;
+    height: 430px;
 
     ${size === 'normal' &&
     orientation === 'landscape' &&

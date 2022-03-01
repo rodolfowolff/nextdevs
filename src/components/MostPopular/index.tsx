@@ -1,3 +1,4 @@
+import { NoImage } from '@components/Thumb/styles'
 import { PostsProps } from 'src/types/post-type'
 import { Heading } from '../Heading'
 import { Thumb } from '../Thumb'
@@ -17,7 +18,7 @@ export const MostPopular = ({ posts }: MostPopularProps) => (
           key={post.slug}
           slug={post.slug}
           tagText={post.tags[0]}
-          backgroundURL={post.coverImage.url}
+          backgroundURL={post.coverImage ? post.coverImage.url : ''}
           size="normal"
           orientation="portrait"
           description={post.excerpt}

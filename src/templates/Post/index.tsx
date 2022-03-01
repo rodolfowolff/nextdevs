@@ -13,12 +13,14 @@ export const PostTemplate = ({ post, posts }: any) => {
       {post && posts && (
         <>
           <Heading>{post.title}</Heading>
-          <Image
-            src={post.coverImage.url}
-            alt={post.title}
-            width="1400"
-            height="600"
-          />
+          {
+            <Image
+              src={post.coverImage.url}
+              alt={post.title}
+              width={1200}
+              height={600}
+            />
+          }
           <div>
             <Summary>{post.excerpt}</Summary>
             <PublishedAt>

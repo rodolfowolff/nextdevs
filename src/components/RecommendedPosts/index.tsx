@@ -17,8 +17,8 @@ export const RecommendedPosts = ({ posts }: RecommendedPostsProps) => (
         <Thumb
           key={post.slug}
           slug={post.slug}
-          tagText={post.tags[0]}
-          backgroundURL={post.coverImage.url}
+          tagText="recomendado"
+          backgroundURL={post.coverImage ? post.coverImage.url : ''}
           size="normal"
           orientation="portrait"
           description={post.excerpt}

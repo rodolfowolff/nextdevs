@@ -5767,7 +5767,7 @@ export function usePostQuery(
 }
 export const PostsDocument = gql`
   query Posts {
-    posts(orderBy: publishedAt_DESC) {
+    posts(orderBy: createdAt_DESC) {
       title
       slug
       tags

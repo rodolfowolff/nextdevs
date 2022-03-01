@@ -1,5 +1,5 @@
 query Posts {
-  posts(orderBy: publishedAt_DESC) {
+  posts(orderBy: createdAt_DESC) {
     title
     slug
     tags

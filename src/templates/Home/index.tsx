@@ -8,24 +8,31 @@ import { HomePageProps } from 'src/types/post-type'
 import { Base } from '../Base'
 import { Grid } from './styles'
 
-const SECTIONS_CONFIGS = [
-  {
-    tag: 'news',
-    size: 3,
-  },
-  {
-    tag: 'most-popular',
-    size: 8,
-  },
-  {
-    tag: 'latest',
-    size: 3,
-  },
-  // {
-  //   tag: 'recommended',
-  //   size: 6,
-  // },
-]
+function groupArrayOfObjects(list: any[], key: string) {
+  return list.reduce(
+    (acc: { [x: string]: any[] }, item: { [x: string]: string | number }) => {
+      ;(acc[item[key]] = acc[item[key]] || []).push(item)
+      return acc
+    },
+    {}
+  )
+}
+
+function getSection(
+  section: { tag: string; start: number; end: number },
+  posts: HomePageProps[]
+): HomePageProps[] {
+  const { tag, start, end } = section
+  const groupedPosts = groupArrayOfObjects(posts, 'tags')
+  let sectionPosts: any[] = []
+  const x = Object.keys(groupedPosts).forEach(key => {
+    if (key.split(',').includes(tag)) {
+      const keySplit = groupedPosts[key].slice(start, end)
+      return sectionPosts.push(keySplit)
+    }
+  })
+  return sectionPosts.flat().slice(start, end)
+}
 
 export const HomePage = ({ page, posts }: HomePageProps) => {
   return (
@@ -33,53 +40,57 @@ export const HomePage = ({ page, posts }: HomePageProps) => {
       <Base>
         <Header {...page} />
         <SectionMain>
-          {SECTIONS_CONFIGS.map(
-            section =>
-              section.tag === 'news' &&
-              posts
-                .slice(0, 1)
-                .filter(post => post.tags.includes('news'))
-                .map(post => (
-                  <Thumb
-                    key={post.slug}
-                    tagText={post.tags[0]}
-                    description={post.excerpt}
-                    backgroundURL={post.coverImage.url}
-                    size="large"
-                    orientation="landscape"
-                    slug={post.slug}
-                    pagePath={`/post/${post.slug}`}
-                  />
-                ))
+          {getSection({ tag: 'novo', start: 0, end: 1 }, posts as any).map(
+            post => (
+              <Thumb
+                key={post.slug}
+                slug={post.slug}
+                tagText="novo"
+                backgroundURL={post.coverImage ? post.coverImage.url : ''}
+                size="large"
+                orientation="landscape"
+                description={post.excerpt}
+                pagePath={`/post/${post.slug}`}
+              />
+            )
           )}
+
           <div className="right-side">
-            {SECTIONS_CONFIGS.map(
-              section =>
-                section.tag === 'news' &&
-                posts
-                  .slice(1, 3)
-                  .filter(post => post.tags.includes('news'))
-                  .map(post => (
-                    <Thumb
-                      key={post.slug}
-                      tagText={post.tags[0]}
-                      description={post.excerpt}
-                      backgroundURL={post.coverImage.url}
-                      size="small"
-                      orientation="landscape"
-                      slug={post.slug}
-                      pagePath={`/post/${post.slug}`}
-                    />
-                  ))
+            {getSection({ tag: 'novo', start: 1, end: 3 }, posts as any).map(
+              post => (
+                <Thumb
+                  key={post.slug}
+                  slug={post.slug}
+                  tagText="novo"
+                  backgroundURL={post.coverImage ? post.coverImage.url : ''}
+                  size="small"
+                  orientation="landscape"
+                  description={post.excerpt}
+                  pagePath={`/post/${post.slug}`}
+                />
+              )
             )}
           </div>
         </SectionMain>
+
         <Grid>
-          <LatestPosts posts={Object.values(posts.slice(0, 6))} />
-          <MostPopular posts={Object.values(posts.slice(0, 4))} />
+          <LatestPosts
+            posts={getSection({ tag: 'novo', start: 3, end: 10 }, posts as any)}
+          />
+          <MostPopular
+            posts={getSection(
+              { tag: 'popular', start: 0, end: 4 },
+              posts as any
+            )}
+          />
         </Grid>
 
-        <RecommendedPosts posts={Object.values(posts.slice(0, 3))} />
+        <RecommendedPosts
+          posts={getSection(
+            { tag: 'recomendado', start: 0, end: 3 },
+            posts as any
+          )}
+        />
       </Base>
     </>
   )

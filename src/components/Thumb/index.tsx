@@ -6,7 +6,7 @@ export type ThumbSizes = 'large' | 'normal' | 'small'
 export type ThumbOrientations = 'landscape' | 'portrait'
 
 type ThumbType = {
-  tagText: string
+  tagText: string[] | string
   slug: string
   description?: string
   backgroundURL: string
@@ -28,7 +28,7 @@ export const Thumb = ({
     <Wrapper
       size={size}
       orientation={orientation}
-      bg={backgroundURL}
+      bg={backgroundURL ? backgroundURL : ''}
       aria-labelledby={description ? slug : ''}
       aria-hidden={!description && 'true'}
     >

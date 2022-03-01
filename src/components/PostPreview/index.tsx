@@ -1,9 +1,6 @@
 import { CustomLink } from '@components/CustomLink'
 import Link from 'next/link'
 import { PostsProps } from 'src/types/post-type'
-
-// import { CustomLink } from '../CustomLink'
-// import { SROnly } from '../SROnly'
 import { Thumb } from '../Thumb'
 
 import { Wrapper, Info, WrapperButton, Text } from './styles'
@@ -17,9 +14,10 @@ export const PostPreview = ({
   publishedAt,
 }: PostsProps) => (
   <Wrapper>
+    {console.log(tags, coverImage, slug, title, excerpt, publishedAt)}
     <Thumb
-      tagText={tags[0]}
-      backgroundURL={coverImage.url}
+      tagText={tags}
+      backgroundURL={coverImage ? coverImage.url : ''}
       size="small"
       orientation="portrait"
       slug={slug}
