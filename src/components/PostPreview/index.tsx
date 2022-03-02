@@ -14,7 +14,6 @@ export const PostPreview = ({
   publishedAt,
 }: PostsProps) => (
   <Wrapper>
-    {console.log(tags, coverImage, slug, title, excerpt, publishedAt)}
     <Thumb
       tagText={tags}
       backgroundURL={coverImage ? coverImage.url : ''}
@@ -33,7 +32,7 @@ export const PostPreview = ({
         </span>
       </time>
       <WrapperButton>
-        <CustomLink size="small" url={slug} id={`info-${slug}`}>
+        <CustomLink size="small" url={`/post/${slug}`} id={`info-${slug}`}>
           Ler notícia <Text> {title}</Text>
         </CustomLink>
       </WrapperButton>

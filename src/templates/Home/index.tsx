@@ -27,7 +27,7 @@ function getSection(
   let sectionPosts: any[] = []
   const x = Object.keys(groupedPosts).forEach(key => {
     if (key.split(',').includes(tag)) {
-      const keySplit = groupedPosts[key].slice(start, end)
+      const keySplit = groupedPosts[key]
       return sectionPosts.push(keySplit)
     }
   })

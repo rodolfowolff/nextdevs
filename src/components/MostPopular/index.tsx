@@ -16,7 +16,7 @@ export const MostPopular = ({ posts }: MostPopularProps) => (
         <Thumb
           key={post.slug}
           slug={post.slug}
-          tagText={post.tags[0]}
+          tagText="popular"
           backgroundURL={post.coverImage ? post.coverImage.url : ''}
           size="normal"
           orientation="portrait"
