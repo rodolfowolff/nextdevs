@@ -9,21 +9,23 @@ import {
 import { client, ssrCache } from 'src/lib/urql'
 import { PostTemplate } from 'src/templates/Post'
 
+type PostProps = {
+  [key: string]: any
+}
+
 function Post({ slug } = { slug: '' }) {
   const [
     {
       data: { post },
     },
   ] = usePostQuery({
-    variables: {
-      slug,
-    },
-  }) as [{ data: { post: any } }, any]
+    variables: { slug },
+  }) as [PostProps, any]
   const [
     {
       data: { posts },
     },
-  ] = usePostsQuery() as [{ data: { posts: any } }, any]
+  ] = usePostsQuery() as [PostProps, any]
 
   return (
     <>

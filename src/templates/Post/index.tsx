@@ -1,9 +1,8 @@
 import Image from 'next/image'
 import { Base } from '../Base'
 import { Heading } from '../../components/Heading'
-import { PostsProps, HomePageProps } from '../../types/post-type'
-import { Summary, Content, PublishedAt } from './styles'
-// import { Thumb } from '@components/Thumb'
+import { Summary, PublishedAt } from './styles'
+import Markdown from '@components/Markdown'
 import { RecommendedPosts } from '@components/RecommendedPosts'
 import { Tag } from '@components/Thumb/styles'
 
@@ -26,16 +25,22 @@ export const PostTemplate = ({ post, posts }: any) => {
             <PublishedAt>
               {new Date(post.publishedAt).toLocaleDateString('pt-BR')}
             </PublishedAt>
-            <Content dangerouslySetInnerHTML={{ __html: post.content.html }} />
-            {post.tags.map((tag: string) => (
-              <Tag
-                key={tag}
-                size={'normal'}
-                style={{ display: 'flex', padding: 10 }}
-              >
-                {tag}
-              </Tag>
-            ))}
+            <Markdown postContent={post.content.html} />
+            <div>
+              {post.tags.slice(0, 5).map((tag: string) => (
+                <div key={tag}>
+                  <Tag
+                    size={'normal'}
+                    style={{
+                      display: 'flex',
+                      padding: 14,
+                    }}
+                  >
+                    {tag}
+                  </Tag>
+                </div>
+              ))}
+            </div>
           </div>
           <RecommendedPosts posts={posts} />
         </>
